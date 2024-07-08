@@ -2,6 +2,11 @@ import { Task } from "../interfaces/task";
 import tasks from "../model/task";
 import { TASK_STATUS } from "../interfaces/task";
 
+// function to get all tasks
+export const getTasks = () => {
+  return tasks;
+};
+
 // Get task from the provided ID
 export const getTaskById = (id: number) => {
   const task = tasks.find((task) => task.id === id);
@@ -21,11 +26,13 @@ export const createTask = (task: Task) => {
   if (!Object.values(TASK_STATUS).includes(task.status))
     return { error: "Invalid status" };
 
-  return tasks.push({
+  tasks.push({
     id: tasks.length + 1,
     title: task.title,
     status: task.status,
   });
+
+  return { message: "Task created" };
 };
 
 // function to update a task

@@ -1,10 +1,9 @@
-import tasks from "../model/task";
 import { Request, Response } from "express";
 import * as TaskService from "../service/task";
 
 // Get all tasks
 export function getTasks(req: Request, res: Response) {
-  return res.json(tasks);
+  return TaskService.getTasks();
 }
 
 // Get task by id
