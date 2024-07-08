@@ -3,7 +3,7 @@ import * as TaskService from "../service/task";
 
 // Get all tasks
 export function getTasks(req: Request, res: Response) {
-  return TaskService.getTasks();
+  return res.json(TaskService.getTasks());
 }
 
 // Get task by id

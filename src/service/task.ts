@@ -2,7 +2,7 @@ import { Task } from "../interfaces/task";
 import tasks from "../model/task";
 import { TASK_STATUS } from "../interfaces/task";
 
-// function to get all tasks
+// Get all tasks
 export const getTasks = () => {
   return tasks;
 };

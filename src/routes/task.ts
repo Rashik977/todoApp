@@ -1,4 +1,4 @@
-import express from "express";
+import { Router } from "express";
 import {
   createTask,
   deleteTask,
@@ -7,7 +7,7 @@ import {
   updateTask,
 } from "../controller/task";
 
-const router = express();
+const router = Router();
 
 router.get("/", getTasks);
 

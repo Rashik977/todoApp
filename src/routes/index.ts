@@ -1,11 +1,12 @@
-import express from "express";
+import { Router } from "express";
 import userRoutes from "./task";
 
-const router = express();
+const router = Router();
 
 router.get("/", (req, res) => {
   res.redirect("/tasks");
 });
+
 router.use("/tasks", userRoutes);
 
 export default router;
