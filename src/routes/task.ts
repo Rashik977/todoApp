@@ -1,5 +1,11 @@
 import express from "express";
-import { createUser, getTaskById, getTasks } from "../controller/task";
+import {
+  createUser,
+  deleteTask,
+  getTaskById,
+  getTasks,
+  updateTask,
+} from "../controller/task";
 
 const router = express();
 
@@ -9,12 +15,8 @@ router.get("/:id", getTaskById);
 
 router.post("/", createUser);
 
-router.put("/:id", (req, res) => {
-  return res.json({ message: "update user" });
-});
+router.put("/:id", updateTask);
 
-router.delete("/:id", (req, res) => {
-  return res.json({ message: "delete user" });
-});
+router.delete("/:id", deleteTask);
 
 export default router;

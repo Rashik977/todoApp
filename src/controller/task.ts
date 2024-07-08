@@ -8,14 +8,24 @@ export function getTasks(req: Request, res: Response) {
 
 export function getTaskById(req: Request, res: Response) {
   const id = req.params.id;
-  const task = tasks.find((task) => task.id === parseInt(id));
+  const message = TaskService.getTaskById(parseInt(id));
 
-  if (!task) return res.status(404).json({ message: "Task not found" });
-
-  return res.json(task);
+  return res.json(message);
 }
 
 export function createUser(req: Request, res: Response) {
-  TaskService.createTask(req.body);
-  return res.json({ message: "Task created" });
+  const message = TaskService.createTask(req.body);
+  return res.json(message);
+}
+
+export function updateTask(req: Request, res: Response) {
+  const id = parseInt(req.params.id);
+  const message = TaskService.updateTask(id, req.body);
+  return res.json(message);
+}
+
+export function deleteTask(req: Request, res: Response) {
+  const id = parseInt(req.params.id);
+  const message = TaskService.deleteTask(id);
+  return res.json(message);
 }
