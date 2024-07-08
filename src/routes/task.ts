@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  createUser,
+  createTask,
   deleteTask,
   getTaskById,
   getTasks,
@@ -13,7 +13,7 @@ router.get("/", getTasks);
 
 router.get("/:id", getTaskById);
 
-router.post("/", createUser);
+router.post("/", createTask);
 
 router.put("/:id", updateTask);
 

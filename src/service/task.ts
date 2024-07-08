@@ -2,6 +2,7 @@ import { Task } from "../interfaces/task";
 import tasks from "../model/task";
 import { TASK_STATUS } from "../interfaces/task";
 
+// Get task from the provided ID
 export const getTaskById = (id: number) => {
   const task = tasks.find((task) => task.id === id);
 
@@ -10,6 +11,7 @@ export const getTaskById = (id: number) => {
   return task;
 };
 
+// create a task
 export const createTask = (task: Task) => {
   // Check if title and status are provided
   if (!task.title || !task.status)
@@ -26,25 +28,31 @@ export const createTask = (task: Task) => {
   });
 };
 
+// function to update a task
 export const updateTask = (id: number, task: Task) => {
   const taskIndex = tasks.findIndex((task) => task.id === id);
 
+  // Check if task exists
   if (taskIndex === -1) return { error: "Task not found" };
 
   // Check if status is valid from enum
   if (task.status && !Object.values(TASK_STATUS).includes(task.status))
     return { message: "Invalid status" };
 
+  // Update tasks array
   tasks[taskIndex] = { ...tasks[taskIndex], ...task };
 
   return { message: "Task updated" };
 };
 
+// function to delete a task
 export const deleteTask = (id: number) => {
   const taskIndex = tasks.findIndex((task) => task.id === id);
 
+  // Check if task exists
   if (taskIndex === -1) return { error: "Task not found" };
 
+  // Delete task from tasks array
   tasks.splice(taskIndex, 1);
 
   return { message: "Task deleted" };
