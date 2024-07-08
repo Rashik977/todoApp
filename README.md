@@ -8,7 +8,7 @@ Executing:
 1. use GET '/' or '/tasks' to get all the tasks.
 2. use GET '/tasks/:id' to get the task of that id.
 3. use POST '/tasks' to create a task by parsing a JSON with the title and status of the task.
-   note: Staus is an enum of "not started", "pending" and "done", anything else will result in an error in the API.
+   note: status is an enum of "not started", "pending" and "done", anything else will result in an error in the API.
 5. use PUT '/tasks/:id' to update that task.
 6. use DELETE '/tasks/:id' to delete that task.
 7. Porper error handling is impleted into the API.
