@@ -1,6 +1,6 @@
+import { TASK_STATUS } from "../constants/TaskStatus";
 import { Task } from "../interfaces/task";
 import tasks from "../model/task";
-import { TASK_STATUS } from "../interfaces/task";
 
 // Get all tasks
 export const getTasks = () => {

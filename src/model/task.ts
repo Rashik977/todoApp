@@ -1,4 +1,5 @@
-import { Task, TASK_STATUS } from "../interfaces/task";
+import { TASK_STATUS } from "../constants/TaskStatus";
+import { Task } from "../interfaces/task";
 
 const tasks: Task[] = [
   {
