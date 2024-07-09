@@ -5,7 +5,7 @@ Running it on your own machine:
 3. use Postman(or your choice of HTTP client) to run CRUD on todo tasks.
 
 Executing:
-1. use GET '/' or '/tasks' to get all the tasks.
+1. use GET '/tasks' to get all the tasks.
 2. use GET '/tasks/:id' to get the task of that id.
 3. use POST '/tasks' to create a task by parsing a JSON with the title and status of the task.
    note: status is an enum of "not started", "pending" and "done", anything else will result in an error in the API.
